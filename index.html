@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Fun Website</title>
+    <style>
+        body {
+            font-family: 'Bubblegum Sans', cursive;
+            background-image: url(https://rare-gallery.com/mocahbig/1357078-Cinnamoroll-HD-Wallpaper.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            text-align: center;
+            padding-top: 100px;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 80px;
+            color: #333;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Jumping letters effect */
+        .jumping-letters {
+            display: inline-block;
+            animation: jumpLetters 1s ease-in-out infinite;
+        }
+
+        /* Individual letter animation (Jumping up and down) */
+        @keyframes jumpLetters {
+            0% {
+                transform: translateY(0);
+                color: red;
+            }
+            25% {
+                transform: translateY(-20px); /* Move up */
+                color: orange;
+            }
+            50% {
+                transform: translateY(0); /* Return to original position */
+                color: yellow;
+            }
+            75% {
+                transform: translateY(-20px); /* Move up again */
+                color: green;
+            }
+            100% {
+                transform: translateY(0); /* Return to original position */
+                color: blue;
+            }
+        }
+
+        /* Floating Animals */
+        .animal {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            animation: floatAnimal 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Floating Animal Animation */
+        @keyframes floatAnimal {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-50px) rotate(15deg);
+            }
+            50% {
+                transform: translateY(0) rotate(-15deg);
+            }
+            75% {
+                transform: translateY(50px) rotate(10deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Realistic Floating Cloud Style */
+        .cloud {
+            width: 250px;
+            height: 100px;
+            background: #ffb3d9;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: 20%;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+            animation: cloudMove 30s linear infinite;
+        }
+
+        .cloud::before {
+            content: '';
+            width: 120px;
+            height: 80px;
+            background: #ffb3d9;
+            border-radius: 50%;
+            position: absolute;
+            top: -30px;
+            left: 40px;
+        }
+
+        .cloud::after {
+            content: '';
+            width: 150px;
+            height: 90px;
+            background: #ffb3d9;
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+            left: 90px;
+        }
+
+        @keyframes cloudMove {
+            0% {
+                transform: translateX(-200px);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        /* Other Styles for the page */
+        .moving-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: moveText 10s linear infinite;
+            font-size: 50px;
+            color: #007BFF;
+            margin-top: 40px;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: #ddd;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* Button styles */
+        .control-buttons {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .control-buttons button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .control-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Realistic Balloon Style */
+        .balloon {
+            width: 120px;
+            height: 180px;
+            background: linear-gradient(135deg, #ff69b4, #ff1493); /* Gradient for shine */
+            border-radius: 60% 60% 60% 60% / 50% 50% 40% 40%;
+            position: absolute;
+            bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+            transform: scale(1.05); /* Slight size increase for realism */
+        }
+
+        /* Balloon Tail (Updated to black thread) */
+        .balloon:after {
+            content: '';
+            width: 2px; /* Narrow tail to resemble a thread */
+            height: 80px; /* Longer tail for better proportion */
+            background-color: black; /* Black thread color */
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        /* Balloon Pop Animation */
+        @keyframes popBalloon {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.1); /* Shrink the balloon */
+            }
+            100% {
+                transform: scale(0); /* Shrink it to nothing */
+                opacity: 0; /* Make it disappear */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Jumping H1 -->
+    <h1>
+        <span class="jumping-letters">Welcome to My Fun World!</span>
+    </h1>
+
+    <!-- Moving text -->
+    <div class="moving-text" id="movingText">
+        🌟CAILIE NATHALIE CUNANAN🌟
+    </div>
+
+    <!-- Floating Animals -->
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWZpdWp2czcxdWVveG04bzN4Y3RiMGlycjZod3ZrbTN0cmV1M2EwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FY9Bxgogq9LYXsdKxK/giphy.gif" class="animal" style="top: 10%; left: 10%;"/>
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnFqNjVydGduN3F0ZTMycWltd3p1MndvYnp2bTV2dXR4NmViNW9sOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jwzNDFOjiUBPEUJC6G/giphy.gif" class="animal" style="top: 20%; left: 50%;"/>
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnUybXVicHN0am8zN3AzazNybDdtc3VyYzUxZmprMGVjOHBldDJ4YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7zYQ6KUZZHK4WFAvpW/giphy.gif" class="animal" style="top: 40%; left: 80%;"/>
+
+    <!-- Realistic Floating Clouds -->
+    <div class="cloud" style="top: 10%; left: -300px;"></div>
+    <div class="cloud" style="top: 50%; left: -400px;"></div>
+    <div class="cloud" style="top: 70%; left: -250px;"></div>
+
+    <!-- Balloons at the bottom -->
+    <div class="balloon" style="left: 10%;"><span></span></div>
+    <div class="balloon" style="left: 25%;"><span></span></div>
+    <div class="balloon" style="left: 40%;"><span></span></div>
+    <div class="balloon" style="left: 55%;"><span></span></div>
+    <div class="balloon" style="left: 70%;"><span></span></div>
+    <div class="balloon" style="left: 85%;"><span></span></div>
+
+    <!-- Control Buttons -->
+    <div class="control-buttons">
+        <button id="stopButton">Stop Moving Text</button>
+        <button id="startButton">Start Moving Text</button>
+        <button id="confettiButton">Trigger Confetti</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        © 2025 B O C H O G. All rights reserved.
+    </footer>
+
+    <!-- Include Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Get buttons and elements by their IDs
+        const stopButton = document.getElementById('stopButton');
+        const startButton = document.getElementById('startButton');
+        const movingText = document.getElementById('movingText');
+        const confettiButton = document.getElementById('confettiButton');
+
+        // Function to stop the moving text animation
+        function stopMovingText() {
+            movingText.style.animation = 'none'; // Stops the animation
+        }
+
+        // Function to start the moving text animation again
+        function startMovingText() {
+            movingText.style.animation = 'moveText 10s linear infinite'; // Restarts the animation
+        }
+
+        // Function to trigger confetti
+        function startConfetti() {
+            confetti({
+                particleCount: 200,
+                spread: 60,
+                origin: { x: 0.5, y: 0.5 },
+                shape: 'heart',
+                gravity: 1,
+                angle: 90
+            });
+        }
+
+        // Function to continuously fall confetti
+        function continuousConfetti() {
+            confetti({
+                particleCount: 10,
+                spread: 30,
+                origin: { x: Math.random(), y: 0 },
+                shape: 'circle',
+                gravity: 0.5,
+                angle: 90
+            });
+        }
+
+        // Continuous confetti falling every 100 milliseconds
+        setInterval(continuousConfetti, 100);
+
+        // Add event listeners for buttons
+        stopButton.addEventListener('click', stopMovingText);
+        startButton.addEventListener('click', startMovingText);
+        confettiButton.addEventListener('click', startConfetti);
+
+        // Add "pop" event listener for balloons
+        const balloons = document.querySelectorAll('.balloon');
+        balloons.forEach(balloon => {
+            balloon.addEventListener('click', function () {
+                // Apply the pop animation
+                balloon.style.animation = 'popBalloon 0.5s forwards';
+                // Remove the balloon after the pop animation ends
+                balloon.addEventListener('animationend', () => {
+                    balloon.remove();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
